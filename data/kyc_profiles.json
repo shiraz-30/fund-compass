@@ -1,0 +1,62 @@
+[
+    {
+      "id": "INV001",
+      "name": "Amara Osei",
+      "age": 28,
+      "risk_tolerance": "aggressive",
+      "time_horizon_years": 30,
+      "investment_objective": "growth",
+      "annual_income": 74500,
+      "investable_assets": 18000,
+      "investment_knowledge": "limited",
+      "goal_description": "I want maximum long-term growth for retirement and am comfortable with big swings in value"
+    },
+    {
+      "id": "INV002",
+      "name": "Margaret Chen",
+      "age": 67,
+      "risk_tolerance": "low",
+      "time_horizon_years": 3,
+      "investment_objective": "income",
+      "annual_income": 41500,
+      "investable_assets": 182000,
+      "investment_knowledge": "good",
+      "goal_description": "I need stable monthly income with very little risk as I am retired and depend on this money"
+    },
+    {
+      "id": "INV003",
+      "name": "Raj Patel",
+      "age": 45,
+      "risk_tolerance": "medium",
+      "time_horizon_years": 12,
+      "investment_objective": "growth",
+      "annual_income": 118000,
+      "investable_assets": 93500,
+      "investment_knowledge": "good",
+      "goal_description": "Balanced growth for my kids university and eventual retirement, moderate ups and downs are fine"
+    },
+    {
+      "id": "INV004",
+      "name": "Sophie Tremblay",
+      "age": 35,
+      "risk_tolerance": "medium",
+      "time_horizon_years": 8,
+      "investment_objective": "growth",
+      "annual_income": 87500,
+      "investable_assets": 43000,
+      "investment_knowledge": "limited",
+      "goal_description": "Growing my savings for a down payment on a house in about 8 years, some risk is okay"
+    },
+    {
+      "id": "INV005",
+      "name": "David Kim",
+      "age": 72,
+      "risk_tolerance": "low",
+      "time_horizon_years": 2,
+      "investment_objective": "preservation",
+      "annual_income": 34500,
+      "investable_assets": 224000,
+      "investment_knowledge": "limited",
+      "goal_description": "I cannot afford to lose money, just want to preserve my savings with minimal risk"
+    }
+  ]
