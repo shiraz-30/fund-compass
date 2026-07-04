@@ -1,0 +1,359 @@
+{
+  "_meta": {
+    "disclaimer": "SYNTHETIC DATA \u2014 for portfolio/demo purposes only. Fund family names (RBC, TD, Mackenzie, Fidelity, etc.) are real Canadian asset managers, but the specific fund names, MERs, benchmarks, and descriptions below are fabricated and do not represent actual current products, pricing, or Fund Facts data. Do not use for real investment decisions."
+  },
+  "funds": [
+    {
+      "fund_id": "MM001",
+      "fund_name": "RBC Canadian Money Market Fund",
+      "fund_family": "RBC Global Asset Management",
+      "cifsc_category": "money_market",
+      "risk_rating": "low",
+      "mer": 0.65,
+      "min_investment": 500,
+      "benchmark": "FTSE Canada 91 Day T-Bill Index",
+      "description": "A conservative money market fund investing in high-quality, short-term Canadian government treasury bills and commercial paper with maturities under one year. Designed to preserve capital and provide daily liquidity with minimal volatility. Suited for investors who need a safe place to park cash, are saving for a near-term goal, or want stability with very little risk of losing principal."
+    },
+    {
+      "fund_id": "MM002",
+      "fund_name": "TD Canadian T-Bill Fund",
+      "fund_family": "TD Asset Management",
+      "cifsc_category": "money_market",
+      "risk_rating": "low",
+      "mer": 0.58,
+      "min_investment": 500,
+      "benchmark": "FTSE Canada 91 Day T-Bill Index",
+      "description": "Invests primarily in Government of Canada treasury bills and short-term provincial debt to deliver stable, low-risk income. Net asset value stays close to par, making this a cash-equivalent holding for capital preservation. Appropriate for retirees or short time horizon investors who cannot tolerate large swings in value and need funds accessible within one to three years."
+    },
+    {
+      "fund_id": "MM003",
+      "fund_name": "Mackenzie Canadian Money Market Fund",
+      "fund_family": "Mackenzie Investments",
+      "cifsc_category": "money_market",
+      "risk_rating": "low",
+      "mer": 0.70,
+      "min_investment": 500,
+      "benchmark": "FTSE Canada 91 Day T-Bill Index",
+      "description":"Holds a laddered mix of Canadian bankers' acceptances, commercial paper, and treasury bills. Priority is liquidity and capital safety, not growth."
+    },
+    {
+      "fund_id": "MM004",
+      "fund_name": "BMO Money Market Fund",
+      "fund_family": "BMO Global Asset Management",
+      "cifsc_category": "money_market",
+      "risk_rating": "low",
+      "mer": 0.55,
+      "min_investment": 500,
+      "benchmark": "FTSE Canada 91 Day T-Bill Index",
+      "description": "Provides steady, modest interest income by investing in short-term, high-grade Canadian debt instruments. Emphasizes capital protection and same-day liquidity over returns. Best suited to conservative investors with a very short time horizon, such as those close to retirement or building an emergency fund."
+    },
+    {
+      "fund_id": "CFI001",
+      "fund_name": "RBC Canadian Bond Fund",
+      "fund_family": "RBC Global Asset Management",
+      "cifsc_category": "canadian_fixed_income",
+      "risk_rating": "low_medium",
+      "mer": 1.05,
+      "min_investment": 500,
+      "benchmark": "FTSE Canada Universe Bond Index",
+      "description": "A core bond fund investing in a diversified mix of Government of Canada, provincial, and investment-grade corporate bonds across the yield curve. Aims to deliver steady interest income with modest capital appreciation and lower volatility than equities. Well suited for income-focused investors or as the defensive anchor of a balanced portfolio with a medium-term horizon."
+    },
+    {
+      "fund_id": "CFI002",
+      "fund_name": "TD Canadian Corporate Bond Fund",
+      "fund_family": "TD Asset Management",
+      "cifsc_category": "canadian_fixed_income",
+      "risk_rating": "low_medium",
+      "mer": 1.15,
+      "min_investment": 500,
+      "benchmark": "FTSE Canada All Corporate Bond Index",
+      "description": "Focuses on investment-grade Canadian corporate bonds to generate income above government bond yields while keeping credit risk moderate. Offers more yield than a pure government bond fund with only slightly higher volatility. Appropriate for investors seeking reliable income with some room for interest rate and credit fluctuation."
+    },
+    {
+      "fund_id": "CFI003",
+      "fund_name": "Mackenzie Canadian Bond Fund",
+      "fund_family": "Mackenzie Investments",
+      "cifsc_category": "canadian_fixed_income",
+      "risk_rating": "low_medium",
+      "mer": 1.10,
+      "min_investment": 500,
+      "benchmark": "FTSE Canada Universe Bond Index",
+      "description": "Actively managed broad-market Canadian bond fund that adjusts duration and credit exposure based on interest rate outlook. Balances government and corporate holdings to smooth returns through rate cycles. Suitable for conservative to moderate investors wanting predictable income and capital stability over a three to seven year horizon."
+    },
+    {
+      "fund_id": "CFI004",
+      "fund_name": "CIBC Canadian Short-Term Bond Fund",
+      "fund_family": "CIBC Asset Management",
+      "cifsc_category": "canadian_fixed_income",
+      "risk_rating": "low_medium",
+      "mer": 0.95,
+      "min_investment": 500,
+      "benchmark": "FTSE Canada Short Term Bond Index",
+      "description": "Invests in short-duration Canadian government and corporate bonds to limit sensitivity to interest rate changes while still earning income above cash. A defensive choice for investors with a shorter time horizon who still want some yield above money market rates without large price swings."
+    },
+    {
+      "fund_id": "GFI001",
+      "fund_name": "Fidelity Global Bond Fund",
+      "fund_family": "Fidelity Investments Canada",
+      "cifsc_category": "global_fixed_income",
+      "risk_rating": "medium",
+      "mer": 1.35,
+      "min_investment": 500,
+      "benchmark": "Bloomberg Global Aggregate Bond Index (CAD Hedged)",
+      "description": "Diversifies fixed income exposure across sovereign and corporate debt issued in the United States, Europe, and Asia, with currency hedging to reduce foreign exchange volatility. Aims for higher income potential than domestic-only bond funds by tapping global rate cycles. Fits investors wanting income diversification with moderate additional risk from currency and international credit exposure."
+    },
+    {
+      "fund_id": "GFI002",
+      "fund_name": "Manulife Strategic Income Fund",
+      "fund_family": "Manulife Investment Management",
+      "cifsc_category": "global_fixed_income",
+      "risk_rating": "medium",
+      "mer": 1.45,
+      "min_investment": 500,
+      "benchmark": "Bloomberg Multiverse Index",
+      "description": "A flexible global fixed income mandate that can shift between government bonds, high yield corporate debt, and emerging market debt to pursue attractive income. Higher return potential than a core bond fund comes with more credit and volatility risk. Best suited for income-seeking investors comfortable with moderate fluctuations in value."
+    },
+    {
+      "fund_id": "GFI003",
+      "fund_name": "PIMCO Monthly Income Fund (Canada)",
+      "fund_family": "PIMCO Canada",
+      "cifsc_category": "global_fixed_income",
+      "risk_rating": "medium",
+      "mer": 1.55,
+      "min_investment": 500,
+      "benchmark": "Bloomberg US Aggregate Bond Index (CAD Hedged)",
+      "description": "Targets consistent monthly cash distributions by combining investment-grade and select high-yield bonds from issuers around the world. Actively manages duration and credit quality to balance income generation against capital preservation. Appeals to retirees or income-focused investors who want more yield than domestic bonds and can accept moderate price movement."
+    },
+    {
+      "fund_id": "GFI004",
+      "fund_name": "Dynamic Global Bond Fund",
+      "fund_family": "Dynamic Funds",
+      "cifsc_category": "global_fixed_income",
+      "risk_rating": "medium",
+      "mer": 1.40,
+      "min_investment": 500,
+      "benchmark": "Bloomberg Global Aggregate Bond Index (CAD Hedged)",
+      "description": "Actively rotates across global government and corporate bond markets to capture opportunities from shifting interest rate and currency trends. Provides geographic diversification away from Canadian rate cycles. Suited to investors with a medium-term horizon who want broader fixed income exposure and can tolerate moderate volatility from currency swings."
+    },
+    {
+      "fund_id": "CBAL001",
+      "fund_name": "RBC Balanced Fund",
+      "fund_family": "RBC Global Asset Management",
+      "cifsc_category": "canadian_balanced",
+      "risk_rating": "medium",
+      "mer": 1.75,
+      "min_investment": 500,
+      "benchmark": "60% S&P/TSX Composite / 40% FTSE Canada Universe Bond",
+      "description": "A one-fund solution blending roughly 60% Canadian equities and 40% Canadian bonds to balance growth and income. Rebalances over time to maintain risk targets and reduce the burden of managing multiple funds. Well suited to moderate investors who want steady long-term growth with meaningfully less volatility than an all-equity portfolio, over a five to ten year horizon."
+    },
+    {
+      "fund_id": "CBAL002",
+      "fund_name": "TD Balanced Growth Fund",
+      "fund_family": "TD Asset Management",
+      "cifsc_category": "canadian_balanced",
+      "risk_rating": "medium",
+      "mer": 1.85,
+      "min_investment": 500,
+      "benchmark": "60% S&P/TSX Composite / 40% FTSE Canada Universe Bond",
+      "description": "Combines a diversified basket of Canadian large-cap stocks with high-quality bonds to pursue moderate long-term growth alongside income. The equity sleeve tilts slightly toward growth-oriented sectors while bonds cushion downturns. Appropriate for investors who want a balanced, moderate-risk core holding without picking individual asset classes themselves."
+    },
+    {
+      "fund_id": "CBAL003",
+      "fund_name": "Mackenzie Canadian Balanced Fund",
+      "fund_family": "Mackenzie Investments",
+      "cifsc_category": "canadian_balanced",
+      "risk_rating": "medium",
+      "mer": 1.80,
+      "min_investment": 500,
+      "benchmark": "60% S&P/TSX Composite / 40% FTSE Canada Universe Bond",
+      "description": "Actively adjusts the mix between Canadian equities and fixed income based on market valuations to manage risk through cycles. Seeks a smoother return pattern than pure equity funds while still growing capital over time. A good middle-ground option for investors who want growth but are uneasy with large swings in portfolio value."
+    },
+    {
+      "fund_id": "CBAL004",
+      "fund_name": "Sun Life Granite Balanced Portfolio",
+      "fund_family": "Sun Life Global Investments",
+      "cifsc_category": "canadian_balanced",
+      "risk_rating": "medium",
+      "mer": 1.90,
+      "min_investment": 500,
+      "benchmark": "60% S&P/TSX Composite / 40% FTSE Canada Universe Bond",
+      "description": "A fund-of-funds that holds a diversified mix of Canadian stocks and bonds within a target risk band, rebalancing automatically over time. Good option if you just want something that stays roughly the same risk level without you having to think about it."
+    },
+    {
+      "fund_id": "GBAL001",
+      "fund_name": "Fidelity Global Balanced Fund",
+      "fund_family": "Fidelity Investments Canada",
+      "cifsc_category": "global_balanced",
+      "risk_rating": "medium",
+      "mer": 1.95,
+      "min_investment": 500,
+      "benchmark": "60% MSCI World / 40% Bloomberg Global Aggregate Bond",
+      "description": "Blends global equities from developed markets with international bonds to spread risk across countries and asset classes. The worldwide diversification reduces reliance on the Canadian economy while keeping a balanced risk profile. Suited to moderate investors wanting long-term growth with international exposure and lower volatility than an all-equity fund."
+    },
+    {
+      "fund_id": "GBAL002",
+      "fund_name": "Manulife Global Balanced Fund",
+      "fund_family": "Manulife Investment Management",
+      "cifsc_category": "global_balanced",
+      "risk_rating": "medium",
+      "mer": 2.00,
+      "min_investment": 500,
+      "benchmark": "60% MSCI World / 40% Bloomberg Global Aggregate Bond",
+      "description": "Invests across global stock and bond markets, actively shifting the mix based on macroeconomic conditions to manage risk. Aims to grow capital steadily while limiting drawdowns during market stress through its bond allocation. A reasonable core holding for investors seeking global diversification with a moderate risk tolerance."
+    },
+    {
+      "fund_id": "GBAL003",
+      "fund_name": "CI Global Balanced Fund",
+      "fund_family": "CI Global Asset Management",
+      "cifsc_category": "global_balanced",
+      "risk_rating": "medium",
+      "mer": 2.05,
+      "min_investment": 500,
+      "benchmark": "60% MSCI World / 40% Bloomberg Global Aggregate Bond",
+      "description": "Holds a diversified mix of international equities and bonds selected for quality and valuation, aiming to participate in global growth while dampening volatility. The multi-asset structure suits investors who want broad international exposure but are not comfortable holding equities alone."
+    },
+    {
+      "fund_id": "GBAL004",
+      "fund_name": "Invesco Global Balanced Fund",
+      "fund_family": "Invesco Canada",
+      "cifsc_category": "global_balanced",
+      "risk_rating": "medium",
+      "mer": 1.98,
+      "min_investment": 500,
+      "benchmark": "60% MSCI World / 40% Bloomberg Global Aggregate Bond",
+      "description": "Pursues long-term growth through a globally diversified portfolio of equities and bonds, with tactical shifts to manage downside risk in volatile periods. Appeals to investors who want exposure beyond Canada's borders while still keeping a meaningful fixed income cushion for moderate overall risk."
+    },
+    {
+      "fund_id": "CEQ001",
+      "fund_name": "RBC Canadian Equity Fund",
+      "fund_family": "RBC Global Asset Management",
+      "cifsc_category": "canadian_equity",
+      "risk_rating": "medium_high",
+      "mer": 2.00,
+      "min_investment": 500,
+      "benchmark": "S&P/TSX Composite Index",
+      "description": "Invests in a diversified portfolio of large and mid-cap Canadian companies across financials, energy, materials, and industrials sectors. Seeks long-term capital growth by concentrating on established, financially sound businesses listed on the TSX. Suited to growth-oriented investors with a seven to ten year or longer horizon who can tolerate meaningful short-term price swings."
+    },
+    {
+      "fund_id": "CEQ002",
+      "fund_name": "TD Canadian Equity Fund",
+      "fund_family": "TD Asset Management",
+      "cifsc_category": "canadian_equity",
+      "risk_rating": "medium_high",
+      "mer": 2.10,
+      "min_investment": 500,
+      "benchmark": "S&P/TSX Composite Index",
+      "description": "Focuses on high-quality Canadian companies with strong balance sheets and consistent earnings growth, spanning banks, energy producers, and consumer businesses. Designed for investors pursuing long-term capital appreciation who are comfortable with the volatility typical of domestic stock markets."
+    },
+    {
+      "fund_id": "CEQ003",
+      "fund_name": "Mackenzie Canadian Growth Fund",
+      "fund_family": "Mackenzie Investments",
+      "cifsc_category": "canadian_equity",
+      "risk_rating": "medium_high",
+      "mer": 2.15,
+      "min_investment": 500,
+      "benchmark": "S&P/TSX Composite Index",
+      "description": "Targets Canadian companies with above-average growth prospects, favouring businesses reinvesting earnings to expand market share. Return potential is higher than broad-market equity funds but so is volatility. A fit for investors with a long time horizon and higher risk tolerance seeking above-market growth."
+    },
+    {
+      "fund_id": "CEQ004",
+      "fund_name": "CI Canadian Dividend Fund",
+      "fund_family": "CI Global Asset Management",
+      "cifsc_category": "canadian_equity",
+      "risk_rating": "medium_high",
+      "mer": 1.90,
+      "min_investment": 500,
+      "benchmark": "S&P/TSX Composite Dividend Index",
+      "description": "Invests in established Canadian companies with a history of paying and growing dividends, particularly in the banking, utility, and pipeline sectors. Offers equity growth potential alongside a steady income stream, with somewhat less volatility than pure growth-oriented equity funds, while still requiring a long time horizon and comfort with stock market fluctuations."
+    },
+    {
+      "fund_id": "GEQ001",
+      "fund_name": "Fidelity Global Innovators Fund",
+      "fund_family": "Fidelity Investments Canada",
+      "cifsc_category": "global_equity",
+      "risk_rating": "medium_high",
+      "mer": 2.20,
+      "min_investment": 500,
+      "benchmark": "MSCI World Index",
+      "description": "Invests worldwide in companies driving technological and business model innovation across the United States, Europe, and Asia. Provides geographic and sector diversification beyond Canada with a focus on structural long-term growth trends. Suited for investors with a long horizon seeking capital appreciation who accept significant short-term price volatility."
+    },
+    {
+      "fund_id": "GEQ002",
+      "fund_name": "Mackenzie Global Equity Fund",
+      "fund_family": "Mackenzie Investments",
+      "cifsc_category": "global_equity",
+      "risk_rating": "medium_high",
+      "mer": 2.10,
+      "min_investment": 500,
+      "benchmark": "MSCI World Index",
+      "description": "Broadly diversified across developed international markets, holding large-cap companies selected for quality earnings and durable competitive advantages. Appropriate for growth investors comfortable with equity volatility and currency fluctuation."
+    },
+    {
+      "fund_id": "GEQ003",
+      "fund_name": "CI Global Equity Fund",
+      "fund_family": "CI Global Asset Management",
+      "cifsc_category": "global_equity",
+      "risk_rating": "medium_high",
+      "mer": 2.25,
+      "min_investment": 500,
+      "benchmark": "MSCI World Index",
+      "description": "Seeks long-term capital growth by investing in a diversified basket of leading global businesses across technology, healthcare, and consumer sectors. Offers broad international diversification with active stock selection. Suited to investors with a long time horizon seeking growth who are comfortable with the ups and downs of global equity markets."
+    },
+    {
+      "fund_id": "GEQ004",
+      "fund_name": "Manulife World Investment Fund",
+      "fund_family": "Manulife Investment Management",
+      "cifsc_category": "global_equity",
+      "risk_rating": "medium_high",
+      "mer": 2.15,
+      "min_investment": 500,
+      "benchmark": "MSCI World Index",
+      "description": "Invests in a diversified portfolio of global large-cap companies chosen for sustainable competitive advantages and consistent earnings power. Provides exposure well beyond the Canadian market for investors seeking growth and diversification. Best suited to those with a long investment horizon who can withstand meaningful market volatility."
+    },
+    {
+      "fund_id": "EM001",
+      "fund_name": "RBC Emerging Markets Equity Fund",
+      "fund_family": "RBC Global Asset Management",
+      "cifsc_category": "emerging_markets",
+      "risk_rating": "high",
+      "mer": 2.45,
+      "min_investment": 500,
+      "benchmark": "MSCI Emerging Markets Index",
+      "description": "Invests in companies based in developing economies such as China, India, and Brazil, targeting higher long-term growth potential from faster-expanding economies. Comes with significantly higher volatility from currency swings, political risk, and less liquid markets. Appropriate only for investors with a very long time horizon and high risk tolerance willing to accept large swings in value."
+    },
+    {
+      "fund_id": "EM002",
+      "fund_name": "Fidelity Emerging Markets Fund",
+      "fund_family": "Fidelity Investments Canada",
+      "cifsc_category": "emerging_markets",
+      "risk_rating": "high",
+      "mer": 2.50,
+      "min_investment": 500,
+      "benchmark": "MSCI Emerging Markets Index",
+      "description": "Focuses on well-positioned companies across emerging Asia, Latin America, and EMEA benefiting from rising consumer spending and industrialization. Offers substantial growth potential but with high volatility and periods of sharp drawdown. Suited for aggressive investors with a ten to twenty year horizon who can stomach significant short-term losses in pursuit of higher returns."
+    },
+    {
+      "fund_id": "EM003",
+      "fund_name": "Mackenzie Emerging Markets Fund",
+      "fund_family": "Mackenzie Investments",
+      "cifsc_category": "emerging_markets",
+      "risk_rating": "high",
+      "mer": 2.55,
+      "min_investment": 500,
+      "benchmark": "MSCI Emerging Markets Index",
+      "description": "Actively selects companies across developing markets with strong growth trajectories and improving governance standards. Return potential is high but so is the risk of sharp declines during global risk-off periods or local political instability. Only appropriate for investors with high risk tolerance and a very long time horizon."
+    },
+    {
+      "fund_id": "EM004",
+      "fund_name": "Dynamic Emerging Markets Fund",
+      "fund_family": "Dynamic Funds",
+      "cifsc_category": "emerging_markets",
+      "risk_rating": "high",
+      "mer": 2.60,
+      "min_investment": 500,
+      "benchmark": "MSCI Emerging Markets Index",
+      "description": "Seeks aggressive long-term growth by investing across developing economies with rapidly expanding middle classes and industrial bases. Subject to high currency, political, and liquidity risk that can produce large short-term losses. Best suited for investors with maximum risk tolerance and a multi-decade investment horizon who prioritize growth over stability."
+    }
+  ]
+}
