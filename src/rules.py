@@ -2,6 +2,13 @@
 # Maps KYC profile attributes to eligible CIFSC fund categories
 # Based on IFC suitability framework and CSA Client Focused Reforms
 
+# DISCLAIMER: This rule engine is modeled on general IFC (Investment Funds in
+# Canada) course principles and CSA Client Focused Reform (CFR) concepts —
+# e.g., time horizon capping stated risk tolerance, objective-based category
+# filtering. It has NOT been verified against a specific CIRO rulebook
+# citation or audited for regulatory compliance. Do not use for real
+# suitability determinations.
+
 CIFSC_CATEGORIES = {
     "money_market": {
         "label": "Money Market",
