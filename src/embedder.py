@@ -40,7 +40,9 @@ def build_embedding_text(fund):
 
 def get_client(persist_dir=CHROMA_DIR):
     os.makedirs(persist_dir, exist_ok=True)
-    return chromadb.PersistentClient(path=persist_dir)
+    # telemetry is broken in this chromadb/posthog combo, just turn it off instead of seeing "failed to send telemetry" noise on every query
+    settings = chromadb.Settings(anonymized_telemetry=False)
+    return chromadb.PersistentClient(path=persist_dir, settings=settings)
 
 
 def build_index(funds_path=DATA_PATH, persist_dir=CHROMA_DIR, rebuild=True):
