@@ -51,10 +51,10 @@ educational in tone, not a real recommendation."""
 def call_claude(prompt):
     # the actual api call -- client picks up the key from env, prompt goes in as a single user message
     response = client.messages.create(
-        model=MODEL_NAME,
-        max_tokens=500,
-        messages=[{"role": "user", "content": prompt}],
-    )
+    model=MODEL_NAME,
+    max_tokens=1024,
+    messages=[{"role": "user", "content": prompt}],
+)
     # response.content is a list of blocks -- some models include a thinking block
     # before the actual text, so find the text block instead of assuming index [0]
     for block in response.content:
