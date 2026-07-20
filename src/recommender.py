@@ -26,7 +26,7 @@ def build_prompt(profile, eligible_categories, fund_matches):
     return f"""You are helping explain a mutual fund suitability match to a Canadian investor.
 Investor profile:
 - Age: {profile['age']}
-- Risk tolerance: {profile['risk_tolerance']}
+- Risk tolerance: {profile['risk_tolerance'].replace('_', ' ')}
 - Time horizon: {profile['time_horizon_years']} years
 - Investment objective: {profile['investment_objective']}
 - Stated goal: "{profile['goal_description']}"

@@ -63,17 +63,22 @@ def inject_css():
         }
 
         /* submit button */
+        div[data-testid="stFormSubmitButton"] button,
+        div[data-testid="stFormSubmitButton"] button p {
+            color: white !important;
+        }
         div[data-testid="stFormSubmitButton"] button {
-            background: var(--navy);
-            color: white;
+            background: var(--navy) !important;
             border-radius: 8px;
-            border: none;
+            border: none !important;
             padding: 0.6rem 1.4rem;
             font-weight: 500;
             transition: background 0.15s ease, transform 0.1s ease;
         }
-        div[data-testid="stFormSubmitButton"] button:hover {
-            background: var(--green);
+        div[data-testid="stFormSubmitButton"] button:hover,
+        div[data-testid="stFormSubmitButton"] button:focus {
+            background: var(--green) !important;
+            color: white !important;
             transform: translateY(-1px);
         }
 
@@ -99,8 +104,9 @@ def inject_css():
         div[data-testid="stTextInput"] input:focus,
         div[data-testid="stNumberInput"] input:focus,
         div[data-testid="stTextArea"] textarea:focus {
-            border-color: var(--navy) !important;
-            box-shadow: 0 0 0 2px rgba(11,27,51,0.1) !important;
+            outline: none !important;
+            border-color: var(--green) !important;
+            box-shadow: 0 0 0 2px rgba(30,127,92,0.15) !important;
         }
 
         /* pointer cursor for click-to-select controls, not text fields */
@@ -111,18 +117,107 @@ def inject_css():
         div[data-testid="stSlider"] * {
             cursor: pointer !important;
         }
+        div[data-testid="stTooltipIcon"] {
+            cursor: pointer !important;
+        }
+
+        /* recommendation card */
+        .fc-card {
+            background: white;
+            border: 1px solid rgba(11,27,51,0.08);
+            border-radius: 12px;
+            padding: 28px 30px;
+            margin-top: 24px;
+            box-shadow: 0 1px 3px rgba(11,27,51,0.05);
+            animation: fc-fade-in 0.4s ease;
+        }
+        @keyframes fc-fade-in {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fc-eyebrow {
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-size: 0.72rem;
+            color: var(--green);
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        .fc-fund-name {
+            font-family: 'Fraunces', serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 14px;
+        }
+        .fc-explanation {
+            color: #333;
+            line-height: 1.55;
+            margin-bottom: 18px;
+        }
+        .fc-risk-note {
+            border-left: 3px solid var(--brass);
+            background: rgba(176,141,87,0.07);
+            padding: 12px 16px;
+            font-size: 0.9rem;
+            color: var(--navy);
+            border-radius: 4px;
+        }
+        .fc-stat-row {
+            display: flex; gap: 22px; margin-top: 18px; flex-wrap: wrap;
+        }
+        .fc-stat-label {
+            font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.06em;
+            color: var(--slate); display: block; font-family: 'IBM Plex Mono', monospace;
+        }
+        .fc-stat-value {
+            font-size: 1rem; color: var(--navy); font-weight: 500; font-family: 'IBM Plex Mono', monospace;
+        }
+        .fc-pill {
+            display: inline-block;
+            background: rgba(30,127,92,0.08);
+            color: var(--green);
+            border-radius: 20px;
+            padding: 3px 12px;
+            font-size: 0.78rem;
+            margin: 3px 4px 3px 0;
+            font-family: 'IBM Plex Mono', monospace;
+        }
 
         </style>
         """,
         unsafe_allow_html=True,
     )
 
-
-inject_css()
-
 def _icon_base64():
     with open(os.path.join(os.path.dirname(__file__), "assets", "fundcompass_icon.png"), "rb") as f:
         return base64.b64encode(f.read()).decode()
+
+def render_result(result, rule_result, eligible_categories):
+    st.markdown(
+        f"""
+        <div class="fc-card">
+            <div class="fc-eyebrow">Recommended Fund</div>
+            <div class="fc-fund-name">{result['recommended_fund_name']}</div>
+            <div class="fc-explanation">{result['explanation']}</div>
+            <div class="fc-risk-note">{result['risk_note']}</div>
+            <div class="fc-stat-row">
+                <div><span class="fc-stat-label">Fund ID</span><span class="fc-stat-value">{result['recommended_fund_id']}</span></div>
+                <div><span class="fc-stat-label">Effective Risk Band</span><span class="fc-stat-value">{rule_result['effective_risk_band'].replace('_', ' ').title()}</span></div>
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    st.markdown('<div class="fc-eyebrow" style="margin-top:18px;">Eligible Categories</div>', unsafe_allow_html=True)
+    pills = "".join(f'<span class="fc-pill">{c.replace("_", " ")}</span>' for c in eligible_categories)
+    st.markdown(pills, unsafe_allow_html=True)
+    with st.expander("Why these categories were eligible"):
+        st.write(rule_result["reasoning"])
+
+inject_css()
+
 
 st.markdown(
     f"""
@@ -160,8 +255,9 @@ with st.form("investor_form"):
 
     risk_tolerance = st.selectbox(
         "Risk tolerance",
-        options=["Low", "Low Medium", "Medium", "High", "Aggressive"],
+        options=["low", "low_medium", "medium", "high", "aggressive"],
         index=2,
+        format_func=lambda x: x.replace("_", " ").title(),
         help="How much fluctuation in value are you comfortable with?",
     )
 
@@ -189,6 +285,7 @@ with st.form("investor_form"):
 
     submitted = st.form_submit_button("Get my recommendation")
 
+result_area = st.empty()
 
 if submitted:
     if not goal_description.strip():
@@ -204,28 +301,22 @@ if submitted:
             "goal_description": goal_description.strip(),
         }
 
+        result_area.empty()
         with st.spinner("Finding your best-fit fund..."):
             rule_result = rule_based_recommend(profile)
             eligible_categories = rule_result["eligible_categories"]
 
             # no category survived the suitability filter; it is rare, but possible with an unusual combo of inputs, so handle it instead of letting the next line crash
-            if not eligible_categories:
-                st.error("No fund categories are eligible for this profile under current suitability rules.")
-            else:
-                matches = semantic_search(goal_description, eligible_categories=eligible_categories)
-                result = get_cached_recommendation(profile, eligible_categories, matches)
-
-                # the api came back but parse_response() couldn't turn it into valid json so show a clean message instead of a raw crash, with the raw text tucked away
-                if "error" in result:
-                    st.error("Couldn't generate a recommendation right now. Please try again.")
-                    with st.expander("Details"):
-                        st.text(result.get("raw", ""))
+            with result_area.container():
+                if not eligible_categories:
+                    st.error("No fund categories are eligible for this profile under current suitability rules.")
                 else:
-                    # everything worked, show the actual recommendation
-                    st.success(f"Recommended: **{result['recommended_fund_name']}**")
-                    st.write(result["explanation"])
-                    st.info(result["risk_note"])
+                    matches = semantic_search(goal_description, eligible_categories=eligible_categories)
+                    result = get_cached_recommendation(profile, eligible_categories, matches)
 
-                    with st.expander("Why these categories were eligible"):
-                        st.write(rule_result["reasoning"])
-                        st.write(f"Eligible categories: {', '.join(eligible_categories)}")
+                    if "error" in result:
+                        st.error("Couldn't generate a recommendation right now. Please try again.")
+                        with st.expander("Details"):
+                            st.text(result.get("raw", ""))
+                    else:
+                        render_result(result, rule_result, eligible_categories)
