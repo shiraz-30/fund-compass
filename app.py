@@ -2,6 +2,7 @@
 
 import sys
 import os
+import base64
 
 import streamlit as st
 
@@ -31,6 +32,10 @@ def inject_css():
         .stApp { background-color: var(--paper); }
 
         h1, h2, h3 { font-family: 'Fraunces', serif; color: var(--navy); }
+        .fc-header { display: flex; align-items: center; gap: 14px; margin-bottom: 2px; }
+        .fc-header img { height: 2.3em; }
+        .fc-header h1 { margin: 0; font-size: 2.1rem; font-weight: 600; line-height: 1; }
+        .fc-tagline { color: var(--slate); font-size: 0.95rem; margin: 4px 0 22px 0; }
         </style>
         """,
         unsafe_allow_html=True,
@@ -39,12 +44,20 @@ def inject_css():
 
 inject_css()
 
-col_icon, col_title = st.columns([1, 6])
-with col_icon:
-    st.image("assets/fundcompass_icon.png", width=70)
-with col_title:
-    st.title("FundCompass")
-st.caption("Mutual fund suitability recommendations for Canadian investors")
+def _icon_base64():
+    with open(os.path.join(os.path.dirname(__file__), "assets", "fundcompass_icon.png"), "rb") as f:
+        return base64.b64encode(f.read()).decode()
+
+st.markdown(
+    f"""
+    <div class="fc-header">
+        <img src="data:image/png;base64,{_icon_base64()}">
+        <h1>FundCompass</h1>
+    </div>
+    <div class="fc-tagline">Suitability-driven mutual fund guidance for Canadian investors</div>
+    """,
+    unsafe_allow_html=True,
+)
 
 st.warning(
     "This is a portfolio project using synthetic fund data and a rule engine modeled on "
