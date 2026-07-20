@@ -13,6 +13,32 @@ from src.recommender import get_recommendation
 
 st.set_page_config(page_title="FundCompass", page_icon="assets/fundcompass_icon.png", layout="centered")
 
+def inject_css():
+    st.markdown(
+        """
+        <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap');
+
+        :root {
+            --navy: #0B1B33;
+            --paper: #F6F7F5;
+            --green: #1E7F5C;
+            --brass: #B08D57;
+            --slate: #64748B;
+        }
+
+        html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
+        .stApp { background-color: var(--paper); }
+
+        h1, h2, h3 { font-family: 'Fraunces', serif; color: var(--navy); }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+inject_css()
+
 col_icon, col_title = st.columns([1, 6])
 with col_icon:
     st.image("assets/fundcompass_icon.png", width=70)
