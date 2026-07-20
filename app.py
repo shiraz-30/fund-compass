@@ -36,6 +36,71 @@ def inject_css():
         .fc-header img { height: 2.3em; }
         .fc-header h1 { margin: 0; font-size: 2.1rem; font-weight: 600; line-height: 1; }
         .fc-tagline { color: var(--slate); font-size: 0.95rem; margin: 4px 0 22px 0; }
+
+        /* form container */
+        div[data-testid="stForm"] {
+            background: white;
+            border: 1px solid rgba(11,27,51,0.08);
+            border-radius: 12px;
+            padding: 28px 28px 12px 28px;
+            box-shadow: 0 1px 3px rgba(11,27,51,0.05);
+        }
+        div[data-testid="stForm"] h3 {
+            font-size: 1.15rem;
+            margin-bottom: 18px;
+        }
+
+        /* inputs */
+        div[data-testid="stTextInput"] input,
+        div[data-testid="stNumberInput"] input,
+        div[data-testid="stTextArea"] textarea {
+            border-radius: 8px !important;
+            border: 1px solid rgba(11,27,51,0.15) !important;
+        }
+        div[data-baseweb="select"] > div {
+            border-radius: 8px !important;
+            border: 1px solid rgba(11,27,51,0.15) !important;
+        }
+
+        /* submit button */
+        div[data-testid="stFormSubmitButton"] button {
+            background: var(--navy);
+            color: white;
+            border-radius: 8px;
+            border: none;
+            padding: 0.6rem 1.4rem;
+            font-weight: 500;
+            transition: background 0.15s ease, transform 0.1s ease;
+        }
+        div[data-testid="stFormSubmitButton"] button:hover {
+            background: var(--green);
+            transform: translateY(-1px);
+        }
+
+        /* input hover + focus feedback */
+        div[data-testid="stTextInput"] input:hover,
+        div[data-testid="stNumberInput"] input:hover,
+        div[data-testid="stTextArea"] textarea:hover,
+        div[data-baseweb="select"]:hover > div {
+            border-color: var(--green) !important;
+        }
+
+        div[data-testid="stTextInput"] input:focus,
+        div[data-testid="stNumberInput"] input:focus,
+        div[data-testid="stTextArea"] textarea:focus {
+            border-color: var(--navy) !important;
+            box-shadow: 0 0 0 2px rgba(11,27,51,0.1) !important;
+        }
+
+        /* pointer cursor for click-to-select controls, not text fields */
+        div[data-baseweb="select"],
+        div[data-baseweb="select"] * {
+            cursor: pointer !important;
+        }
+        div[data-testid="stSlider"] * {
+            cursor: pointer !important;
+        }
+
         </style>
         """,
         unsafe_allow_html=True,
