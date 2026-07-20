@@ -107,8 +107,17 @@ def apply_objective_filter(categories: list, objective: str) -> list:
 
 def rule_based_recommend(profile: dict) -> dict:
     risk_band = get_risk_band(profile["risk_tolerance"], profile["time_horizon_years"])
+
+    # objective can also cap the effective risk band, same principle as time horizon;
+    # without this, "preservation" could filter out every candidate and leave nothing eligible, since money_market only ever appears in the "low" band's category list
+    objective = profile["investment_objective"]
+    if objective == "preservation":
+        risk_band = min_risk(risk_band, "low")
+    elif objective == "income":
+        risk_band = min_risk(risk_band, "low_medium")
+
     eligible = RISK_ELIGIBLE.get(risk_band, [])
-    eligible = apply_objective_filter(eligible, profile["investment_objective"])
+    eligible = apply_objective_filter(eligible, objective)
 
     reasoning = (
         f"Stated risk tolerance is '{profile['risk_tolerance']}' with a "
