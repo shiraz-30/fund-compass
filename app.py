@@ -77,6 +77,17 @@ def inject_css():
             transform: translateY(-1px);
         }
 
+        /* compliance notice, quiet not alarming */
+        .fc-notice {
+            border-left: 3px solid var(--slate);
+            background: rgba(100,116,139,0.06);
+            padding: 10px 14px;
+            font-size: 0.82rem;
+            color: var(--slate);
+            border-radius: 4px;
+            margin-bottom: 28px;
+        }
+
         /* input hover + focus feedback */
         div[data-testid="stTextInput"] input:hover,
         div[data-testid="stNumberInput"] input:hover,
@@ -124,10 +135,15 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-st.warning(
-    "This is a portfolio project using synthetic fund data and a rule engine modeled on "
-    "general CFR suitability principles. It is not real financial advice and has not been "
-    "verified against a specific CIRO rulebook citation. Do not use for real investment decisions."
+st.markdown(
+    """
+    <div class="fc-notice">
+        Portfolio project using synthetic fund data and a rule engine modeled on general CFR
+        suitability principles. Not real financial advice; not verified against a specific
+        CIRO rulebook citation. Do not use for real investment decisions.
+    </div>
+    """,
+    unsafe_allow_html=True,
 )
 
 # cached so re-submitting the exact same profile doesn't re-hit the api unnecessarily so streamlit reruns the whole script on every interaction
