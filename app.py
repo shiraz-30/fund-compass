@@ -162,6 +162,7 @@ def inject_css():
             font-size: 0.9rem;
             color: var(--navy);
             border-radius: 4px;
+            margin-bottom: 14px;
         }
         .fc-stat-row {
             display: flex; gap: 22px; margin-top: 18px; flex-wrap: wrap;
@@ -184,6 +185,28 @@ def inject_css():
             font-family: 'IBM Plex Mono', monospace;
         }
 
+        .fc-alt-section {
+            margin-top: 20px;
+        }
+        .fc-alt-item {
+            border: 1px solid rgba(11,27,51,0.08);
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin-bottom: 8px;
+            background: rgba(11,27,51,0.02);
+        }
+        .fc-alt-name {
+            font-family: 'Fraunces', serif;
+            font-weight: 600;
+            color: var(--navy);
+            font-size: 1.1rem;
+        }
+        .fc-alt-reason {
+            color: var(--slate);
+            font-size: 0.85rem;
+            margin-top: 2px;
+        }
+
         </style>
         """,
         unsafe_allow_html=True,
@@ -194,9 +217,9 @@ def _icon_base64():
         return base64.b64encode(f.read()).decode()
 
 def render_result(result, rule_result, eligible_categories):
-    st.markdown(
-        f"""
-        <div class="fc-card">
+    with st.container(border=True):
+        st.markdown(
+            f"""
             <div class="fc-eyebrow">Recommended Fund</div>
             <div class="fc-fund-name">{result['recommended_fund_name']}</div>
             <div class="fc-explanation">{result['explanation']}</div>
@@ -205,17 +228,24 @@ def render_result(result, rule_result, eligible_categories):
                 <div><span class="fc-stat-label">Fund ID</span><span class="fc-stat-value">{result['recommended_fund_id']}</span></div>
                 <div><span class="fc-stat-label">Effective Risk Band</span><span class="fc-stat-value">{rule_result['effective_risk_band'].replace('_', ' ').title()}</span></div>
             </div>
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
+            """,
+            unsafe_allow_html=True,
+        )
+
+        alternatives = result.get("alternatives", [])
+        if alternatives:
+            st.markdown('<div class="fc-eyebrow" style="margin-top:20px;">Other Reasonable Options</div>', unsafe_allow_html=True)
+            for alt in alternatives:
+                with st.expander(alt["fund_name"]):
+                    st.write(alt.get("explanation", ""))
+                    if alt.get("risk_note"):
+                        st.markdown(f'<div class="fc-risk-note">{alt["risk_note"]}</div>', unsafe_allow_html=True)
 
     st.markdown('<div class="fc-eyebrow" style="margin-top:18px;">Eligible Categories</div>', unsafe_allow_html=True)
     pills = "".join(f'<span class="fc-pill">{c.replace("_", " ")}</span>' for c in eligible_categories)
     st.markdown(pills, unsafe_allow_html=True)
     with st.expander("Why these categories were eligible"):
         st.write(rule_result["reasoning"])
-
 inject_css()
 
 
