@@ -36,13 +36,19 @@ Within those categories, the top semantic matches to their stated goal are:
 {funds_text}
 
 Pick the single best fund from the list above and explain why it fits this investor.
+Also pick up to 2 other reasonable alternatives from the list.
 Respond with ONLY valid JSON, no other text, in exactly this shape:
 {{
   "recommended_fund_id": "...",
   "recommended_fund_name": "...",
   "explanation": "2-3 sentences on why this fund fits this specific investor",
-  "risk_note": "1 sentence noting the fund's risk/MER in plain language"
+  "risk_note": "1 sentence noting the fund's risk/MER in plain language",
+  "alternatives": [
+    {{"fund_id": "...", "fund_name": "...", "reason": "1 short sentence summary", "explanation": "2-3 sentences on why this could also work, and how it differs from the top pick", "risk_note": "1 sentence noting this fund's risk/MER"}},
+    {{"fund_id": "...", "fund_name": "...", "reason": "1 short sentence summary", "explanation": "2-3 sentences on why this could also work, and how it differs from the top pick", "risk_note": "1 sentence noting this fund's risk/MER"}}
+  ]
 }}
+If fewer than 2 reasonable alternatives exist in the list, return fewer -- do not invent funds not in the list.
 
 This is a synthetic demo dataset, not real financial advice -- keep the explanation
 educational in tone, not a real recommendation."""
