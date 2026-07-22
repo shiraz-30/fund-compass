@@ -58,7 +58,7 @@ def call_claude(prompt):
     # the actual api call -- client picks up the key from env, prompt goes in as a single user message
     response = client.messages.create(
     model=MODEL_NAME,
-    max_tokens=1024,
+    max_tokens=2000,
     messages=[{"role": "user", "content": prompt}],
 )
     # response.content is a list of blocks -- some models include a thinking block
